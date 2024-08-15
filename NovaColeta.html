@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8" />
+    <title>Recicla Mais</title>
+    <meta
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+            name="viewport"
+    />
+    <link
+            rel="icon"
+            href="assets/img/kaiadmin/favicon.ico"
+            type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="main-panel" style="width: 100% !important;">
+        <div class="container" style="margin-top: 0 !important;">
+            <div class="page-inner">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                    <div>
+                        <img src="icone-reciclagem.svg" width="48px">
+                        <h3 class="fw-bold mb-3" style="display: inline; margin-left: 10px; padding-top: 15px">Recicla Mais</h3>
+                        <h6 class="op-7 mb-2" style="margin-top: 10px">Sistema de coleta de materiais recicláveis</h6>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-round">
+                            <div class="card-header">
+                                <div class="card-head-row">
+                                    <div class="card-title">Nova Coletas</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome"/>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control" id="cpf" placeholder="CPF"/>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control" id="telefone" placeholder="telefone"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="email" placeholder="email"/>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select class="form-select" id="tipoObjeto">
+                                            <option value="0">[SELECIONE]</option>
+                                            <option value="1">ELETRONICO</option>
+                                            <option value="2">ELETRODOMESTICO</option>
+                                            <option value="3">MÓVEIS</option>
+                                            <option value="4">METAIS</option>
+                                            <option value="5">VIDROS</option>
+                                            <option value="6">PAPÉIS E PAPELÕES</option>
+                                            <option value="7">PLASTICO</option>
+                                            <option value="8">MADEIRAS</option>
+                                            <option value="9">PILHAS E BATERIAS</option>
+                                            <option value="10">LIXO RADIOATIVO</option>
+                                            <option value="11">LIXO HOSPITALAR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="objetosDescardados" placeholder="Objetos Descartados"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="responsavelColeta" placeholder="Responsável pela coleta"/>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea type="text" class="form-control" id="motivoDescarte" placeholder="Motivo do descarte" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer" style="text-align: right">
+                                <a href="#" class="btn btn-primary btn-round">Salvar</a>
+                                <a href="#" class="btn btn-danger btn-round">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="copyright">
+                    2024, Recicla Mais - Projeto de Extersão Estácio
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Kaiadmin JS -->
+<script src="assets/js/kaiadmin.min.js"></script>
+</body>
+</html>
