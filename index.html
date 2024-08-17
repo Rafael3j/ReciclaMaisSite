@@ -1,238 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8" />
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8"/>
     <title>Recicla Mais</title>
     <meta
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-      name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+            name="viewport"
     />
     <link
-      rel="icon"
-      href="assets/img/kaiadmin/favicon.ico"
-      type="image/x-icon"
+            rel="icon"
+            href="assets/img/kaiadmin/favicon.ico"
+            type="image/x-icon"
     />
 
     <!-- Fonts and icons -->
     <script src="assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
-      WebFont.load({
-        google: { families: ["Public Sans:300,400,500,600,700"] },
-        custom: {
-          families: [
-            "Font Awesome 5 Solid",
-            "Font Awesome 5 Regular",
-            "Font Awesome 5 Brands",
-            "simple-line-icons",
-          ],
-          urls: ["assets/css/fonts.min.css"],
-        },
-        active: function () {
-          sessionStorage.fonts = true;
-        },
-      });
+        WebFont.load({
+            google: {families: ["Public Sans:300,400,500,600,700"]},
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
-  </head>
-  <body>
-    <div class="wrapper">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins.min.css"/>
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css"/>
+    <script src="index.js"></script>
+    <script src="formatacao.js"></script>
+</head>
+<body>
+<div class="wrapper">
 
-      <div class="main-panel" style="width: 100% !important;">
+    <div class="main-panel" style="width: 100% !important;">
         <div class="container" style="margin-top: 0 !important;">
-          <div class="page-inner">
-            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
-              <div>
-                <img src="icone-reciclagem.svg" width="48px">
-                <h3 class="fw-bold mb-3" style="display: inline; margin-left: 10px; padding-top: 15px">Recicla Mais</h3>
-                <h6 class="op-7 mb-2" style="margin-top: 10px">Sistema de coleta de materiais recicláveis</h6>
-              </div>
-              <div class="ms-md-auto py-2 py-md-0">
-                <a href="#" class="btn btn-primary btn-round">Nova Coleta</a>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card card-round">
-                  <div class="card-header">
-                    <div class="card-head-row">
-                      <div class="card-title">Buscar Coletas</div>
+            <div class="page-inner">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                    <div>
+                        <img src="icone-reciclagem.svg" width="48px">
+                        <h3 class="fw-bold mb-3" style="display: inline; margin-left: 10px; padding-top: 15px">Recicla
+                            Mais</h3>
+                        <h6 class="op-7 mb-2" style="margin-top: 10px">Sistema de coleta de materiais recicláveis</h6>
                     </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-2">
-                        <input type="text" class="form-control" id="nome" placeholder="Nome"/>
-                      </div>
-                      <div class="col-md-1">
-                        <a href="#" class="btn btn-secondary">Filtrar</a>
-                      </div>
+                    <div class="ms-md-auto py-2 py-md-0">
+                        <a href="/NovaColeta" class="btn btn-primary btn-round">Nova Coleta</a>
                     </div>
-                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-12" style="overflow: scroll">
-                <table class="table table-head-bg-primary mt-4">
-                  <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Objetos descartados</th>
-                    <th scope="col">Data/Hora</th>
-                    <th scope="col">Ações</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-round">
+                            <div class="card-header">
+                                <div class="card-head-row">
+                                    <div class="card-title">Buscar Coletas</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome"/>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <a href="#" onclick="Filtrar()" class="btn btn-secondary">Filtrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
-
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
-
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
-
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
-
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rafael Rubio da Silva</td>
-                    <td>333.387.128-98</td>
-                    <td>(11) 981683583</td>
-                    <td>Celulares</td>
-                    <td>15/08/2024 13:00</td>
-                    <td>
-                      <button type="button" class="btn btn-icon btn-round btn-info">
-                        <i class="fa fa-info"></i>
-                      </button>
-
-                      <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-info"></i>
-                      </button>
-                    </td>
-                  </tr>
-
-                  </tbody>
-                </table>
-              </div>
+                    <div class="col-md-12" style="overflow: scroll">
+                        <table id="gvResultado" class="table table-head-bg-primary mt-4">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">CPF</th>
+                                <th scope="col">Telefone</th>
+                                <th scope="col">Objetos descartados</th>
+                                <th scope="col">Data/Hora</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
         <footer class="footer">
-          <div class="container-fluid d-flex justify-content-between">
-            <div class="copyright">
-              2024, Recicla Mais - Projeto de Extersão Estácio
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="copyright">
+                    2024, Recicla Mais - Projeto de Extersão Estácio
+                </div>
             </div>
-          </div>
         </footer>
-      </div>
     </div>
-    <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
+</div>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
 
-    <!-- jQuery Scrollbar -->
-    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
-    <!-- jQuery Sparkline -->
-    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- Datatables -->
-    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
 
-    <!-- Bootstrap Notify -->
-    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
-    <!-- jQuery Vector Maps -->
-    <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
 
-    <!-- Sweet Alert -->
-    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
-    <!-- Kaiadmin JS -->
-    <script src="assets/js/kaiadmin.min.js"></script>
-  </body>
+<!-- Kaiadmin JS -->
+<script src="assets/js/kaiadmin.min.js"></script>
+</body>
 </html>

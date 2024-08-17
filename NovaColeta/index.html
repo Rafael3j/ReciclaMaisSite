@@ -9,12 +9,12 @@
     />
     <link
             rel="icon"
-            href="assets/img/kaiadmin/favicon.ico"
+            href="../assets/img/kaiadmin/favicon.ico"
             type="image/x-icon"
     />
 
     <!-- Fonts and icons -->
-    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
         WebFont.load({
             google: { families: ["Public Sans:300,400,500,600,700"] },
@@ -34,9 +34,10 @@
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+    <script src="novaColeta.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -46,7 +47,7 @@
             <div class="page-inner">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
                     <div>
-                        <img src="icone-reciclagem.svg" width="48px">
+                        <img src="../icone-reciclagem.svg" width="48px">
                         <h3 class="fw-bold mb-3" style="display: inline; margin-left: 10px; padding-top: 15px">Recicla Mais</h3>
                         <h6 class="op-7 mb-2" style="margin-top: 10px">Sistema de coleta de materiais recicláveis</h6>
                     </div>
@@ -63,16 +64,20 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" id="nome" placeholder="Nome"/>
+                                        <label>Nome:</label>
+                                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome do cliente aqui"/>
                                     </div>
                                     <div class="col-md-2">
-                                        <input type="text" class="form-control" id="cpf" placeholder="CPF"/>
+                                        <label>CPF:</label>
+                                        <input type="text" class="form-control" id="cpf" placeholder="Digite o CPF aqui"/>
                                     </div>
                                     <div class="col-md-2">
-                                        <input type="text" class="form-control" id="telefone" placeholder="telefone"/>
+                                        <label>Telefone:</label>
+                                        <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone aqui"/>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" id="email" placeholder="email"/>
+                                        <label>E-Mail:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Digite o e-mail do cliente aqui"/>
                                     </div>
                                 </div>
 
@@ -80,26 +85,29 @@
 
                                 <div class="row">
                                     <div class="col-md-3">
+                                        <label>Tipo do objeto:</label>
                                         <select class="form-select" id="tipoObjeto">
-                                            <option value="0">[SELECIONE]</option>
-                                            <option value="1">ELETRONICO</option>
-                                            <option value="2">ELETRODOMESTICO</option>
-                                            <option value="3">MÓVEIS</option>
-                                            <option value="4">METAIS</option>
-                                            <option value="5">VIDROS</option>
-                                            <option value="6">PAPÉIS E PAPELÕES</option>
-                                            <option value="7">PLASTICO</option>
-                                            <option value="8">MADEIRAS</option>
-                                            <option value="9">PILHAS E BATERIAS</option>
-                                            <option value="10">LIXO RADIOATIVO</option>
-                                            <option value="11">LIXO HOSPITALAR</option>
+                                            <option value="">[SELECIONE]</option>
+                                            <option value="ELETRONICO">ELETRONICO</option>
+                                            <option value="ELETRODOMESTICO">ELETRODOMESTICO</option>
+                                            <option value="MÓVEIS">MÓVEIS</option>
+                                            <option value="METAIS">METAIS</option>
+                                            <option value="VIDROS">VIDROS</option>
+                                            <option value="PAPÉIS E PAPELÕES">PAPÉIS E PAPELÕES</option>
+                                            <option value="PLASTICO">PLASTICO</option>
+                                            <option value="MADEIRAS">MADEIRAS</option>
+                                            <option value="PILHAS E BATERIAS">PILHAS E BATERIAS</option>
+                                            <option value="LIXO RADIOATIVO">LIXO RADIOATIVO</option>
+                                            <option value="LIXO HOSPITALAR">LIXO HOSPITALAR</option>
                                         </select>
                                     </div>
                                     <div class="col-md-5">
-                                        <input type="text" class="form-control" id="objetosDescardados" placeholder="Objetos Descartados"/>
+                                        <label>Objetos descartados:</label>
+                                        <input type="text" class="form-control" id="objetosDescardados" placeholder="Informe os objetos descartados aqui"/>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" id="responsavelColeta" placeholder="Responsável pela coleta"/>
+                                        <label>Responsável pela coleta:</label>
+                                        <input type="text" class="form-control" id="responsavelColeta" placeholder="Informe o pesponsável pela coleta"/>
                                     </div>
                                 </div>
 
@@ -107,13 +115,14 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <textarea type="text" class="form-control" id="motivoDescarte" placeholder="Motivo do descarte" rows="5"></textarea>
+                                        <label>Motivo do descarte:</label>
+                                        <textarea type="text" class="form-control" id="motivoDescarte" placeholder="Informe o motivo do descarte" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer" style="text-align: right">
-                                <a href="#" class="btn btn-primary btn-round">Salvar</a>
-                                <a href="#" class="btn btn-danger btn-round">Cancelar</a>
+                                <a href="#" class="btn btn-primary btn-round" onclick="Salvar()">Salvar</a>
+                                <a href="../" class="btn btn-danger btn-round">Cancelar</a>
                             </div>
                         </div>
                     </div>
@@ -131,29 +140,31 @@
     </div>
 </div>
 <!--   Core JS Files   -->
-<script src="assets/js/core/jquery-3.7.1.min.js"></script>
-<script src="assets/js/core/popper.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
 
 <!-- jQuery Scrollbar -->
-<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 <!-- jQuery Sparkline -->
-<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <!-- Datatables -->
-<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
 <!-- jQuery Vector Maps -->
-<script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+<script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
 
 <!-- Sweet Alert -->
-<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 <!-- Kaiadmin JS -->
-<script src="assets/js/kaiadmin.min.js"></script>
+<script src="../assets/js/kaiadmin.min.js"></script>
+
+
 </body>
 </html>
