@@ -21,8 +21,8 @@ function Carregar(id) {
 
 function PreencherDados(dados) {
     document.getElementById('nome').innerText = dados.nome;
-    document.getElementById('cpf').innerText = dados.cpf;
-    document.getElementById('telefone').innerText = dados.telefone;
+    document.getElementById('cpf').innerText = formatarCpf(dados.cpf);
+    document.getElementById('telefone').innerText = formatarTelefone(dados.telefone);
     document.getElementById('email').innerText = dados.email;
     document.getElementById('tipoObjeto').innerText = dados.tipoobjetodescartado;
     document.getElementById('objetoDescartado').innerText = dados.objetodescartado;

@@ -10,3 +10,40 @@ function formatarData(data) {
 
     return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
 }
+
+function formatarCpf(cpf) {
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
+}
+
+function formatarCpfDigitado(input) {
+    input.value = input.value.replace(/\D+/g, ''); // remove todos os caracteres não numéricos
+    input.value = input.value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
+}
+
+function formatarTelefone(telefone) {
+    return telefone.replace(/(\d{2})(\d{5})(\d{4})/g, "($1) $2-$3");
+}
+
+function formatarTelefoneDigitado(o) {
+    setTimeout(function() {
+        const v = mascaraTelefone(o.value);
+        if (v !== o.value) {
+            o.value = v;
+        }
+    }, 1);
+}
+
+function mascaraTelefone(v) {
+    let r = v.replace(/\D/g, "");
+    r = r.replace(/^0/, "");
+    if (r.length > 10) {
+        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (r.length > 5) {
+        r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (r.length > 2) {
+        r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        r = r.replace(/^(\d*)/, "($1");
+    }
+    return r;
+}

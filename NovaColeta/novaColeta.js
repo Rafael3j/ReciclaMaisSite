@@ -1,5 +1,12 @@
-function Salvar()
-{
+document.addEventListener("DOMContentLoaded", function() {
+    const cpfInput = document.getElementById('cpf');
+
+    cpfInput.addEventListener('input', function () {
+        formatarCpfDigitado(cpfInput);
+    });
+})
+
+function Salvar() {
     $.ajax({
         method: "POST",
         url: "http://localhost:8080/coletas",
@@ -16,11 +23,10 @@ function Salvar()
             motivodescarte: $("#motivoDescarte").val()
         }),
         complete: function (data, xhr, errorThrown) {
-            if (xhr === 'success'){
+            if (xhr === 'success') {
                 alert("Dados salvos com sucesso!");
                 window.location.href = "../";
-            }
-            else {
+            } else {
                 alert("Erro ao salvar os dados.");
             }
         },

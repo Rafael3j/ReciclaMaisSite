@@ -1,7 +1,9 @@
 function Filtrar() {
+    var filtro = "?nome=" + document.getElementById("nome").value
+
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/coletas",
+        url: "http://localhost:8080/coletas/buscarPorNome" + filtro,
         dataType: "json",
         contentType: "application/json",
         success: function (data) {
@@ -31,8 +33,8 @@ function PreencherDados(listaDados) {
 
         id.textContent = dado.id;
         nome.textContent = dado.nome;
-        cpf.textContent = dado.cpf;
-        telefone.textContent = dado.telefone;
+        cpf.textContent = formatarCpf(dado.cpf);
+        telefone.textContent = formatarTelefone(dado.telefone);
         objetosDescartados.textContent = dado.objetodescartado;
         dataHora.textContent = formatarData(dado.datahora);
 
@@ -59,7 +61,7 @@ function PreencherDados(listaDados) {
 }
 
 function ConfirmarExclusao(id) {
-    if (confirm('Deseja realmente excluir este registro?')){
+    if (confirm('Deseja realmente excluir este registro?')) {
         Excluir(id);
     }
 }

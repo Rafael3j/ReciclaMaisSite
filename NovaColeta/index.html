@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
     <script src="novaColeta.js"></script>
+    <script src="../formatacao.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -69,11 +70,11 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label>CPF:</label>
-                                        <input type="text" class="form-control" id="cpf" placeholder="Digite o CPF aqui"/>
+                                        <input type="text" class="form-control" id="cpf" maxlength="14" placeholder="Digite o CPF aqui"/>
                                     </div>
                                     <div class="col-md-2">
                                         <label>Telefone:</label>
-                                        <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone aqui"/>
+                                        <input type="text" class="form-control" id="telefone" onkeypress="formatarTelefoneDigitado(this);" onblur="formatarTelefoneDigitado(this);" placeholder="Digite o telefone aqui"/>
                                     </div>
                                     <div class="col-md-4">
                                         <label>E-Mail:</label>
