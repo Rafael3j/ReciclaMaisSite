@@ -68,24 +68,30 @@
                                         <label>Nome:</label>
                                         <input type="text" class="form-control" id="nome" placeholder="Digite o nome do cliente aqui"/>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <label>Endereço da coleta:</label>
+                                        <input type="text" class="form-control" id="enderecoColeta" maxlength="200" placeholder="Digite o endereço onde a coleta irá ocorrer">
+                                    </div>
+
                                     <div class="col-md-2">
                                         <label>CPF:</label>
                                         <input type="text" class="form-control" id="cpf" maxlength="14" placeholder="Digite o CPF aqui"/>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label>Telefone:</label>
-                                        <input type="text" class="form-control" id="telefone" onkeypress="formatarTelefoneDigitado(this);" onblur="formatarTelefoneDigitado(this);" placeholder="Digite o telefone aqui"/>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>E-Mail:</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Digite o e-mail do cliente aqui"/>
                                     </div>
                                 </div>
 
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <label>Telefone:</label>
+                                        <input type="text" class="form-control" id="telefone" onkeypress="formatarTelefoneDigitado(this);" onblur="formatarTelefoneDigitado(this);" placeholder="Digite o telefone aqui"/>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>E-Mail:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Digite o e-mail do cliente aqui"/>
+                                    </div>
+                                    <div class="col-md-2">
                                         <label>Tipo do objeto:</label>
                                         <select class="form-select" id="tipoObjeto">
                                             <option value="">[SELECIONE]</option>
@@ -102,11 +108,11 @@
                                             <option value="LIXO HOSPITALAR">LIXO HOSPITALAR</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <label>Objetos descartados:</label>
                                         <input type="text" class="form-control" id="objetosDescardados" placeholder="Informe os objetos descartados aqui"/>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <label>Responsável pela coleta:</label>
                                         <input type="text" class="form-control" id="responsavelColeta" placeholder="Informe o pesponsável pela coleta"/>
                                     </div>

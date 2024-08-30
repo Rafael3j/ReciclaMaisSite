@@ -1,4 +1,5 @@
 function formatarData(data) {
+    /*
     const dataApi = new Date(data[0], data[1] - 1, data[2], data[3], data[4], data[5]);
 
     const dia = String(dataApi.getDate()).padStart(2, '0');
@@ -9,6 +10,25 @@ function formatarData(data) {
     const segundos = String(dataApi.getSeconds()).padStart(2, '0');
 
     return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+*/
+
+    const isoDate = data;
+
+// Converter a string para um objeto Date
+    const date = new Date(isoDate);
+
+// Extrair os componentes da data
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Os meses são indexados a partir de 0
+    const year = date.getFullYear();
+
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+
+// Formatar a data no formato desejado
+    const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+
+    return formattedDate;
 }
 
 function formatarCpf(cpf) {

@@ -1,3 +1,6 @@
+//const urlBase = "http://localhost:51849";
+const urlBase = "http://reciclamaisapp.brazilsouth.cloudapp.azure.com:90";
+
 document.addEventListener("DOMContentLoaded", function() {
     const cpfInput = document.getElementById('cpf');
 
@@ -9,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function Salvar() {
     $.ajax({
         method: "POST",
-        url: "http://localhost:8080/coletas",
+        url: urlBase + "/api/coleta/criar",
         dataType: "json",
         contentType: "application/json",
         data: JSON.stringify({
@@ -20,7 +23,8 @@ function Salvar() {
             tipoobjetodescartado: $("#tipoObjeto option:selected").val(),
             objetodescartado: $("#objetosDescardados").val(),
             responsavelcoleta: $("#responsavelColeta").val(),
-            motivodescarte: $("#motivoDescarte").val()
+            motivodescarte: $("#motivoDescarte").val(),
+            enderecoColeta: $("#enderecoColeta").val()
         }),
         complete: function (data, xhr, errorThrown) {
             if (xhr === 'success') {

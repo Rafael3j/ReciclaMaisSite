@@ -1,3 +1,6 @@
+//const urlBase = "http://localhost:51849";
+const urlBase = "http://reciclamaisapp.brazilsouth.cloudapp.azure.com:90";
+
 document.addEventListener("DOMContentLoaded", function() {
     const params = new URLSearchParams(window.location.search);
     const id= params.get("id");
@@ -7,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function Carregar(id) {
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/coletas/" + id,
+        url: urlBase + "/api/coleta/buscarPorId/" + id,
         dataType: "json",
         contentType: "application/json",
         success: function (data) {
@@ -20,13 +23,25 @@ function Carregar(id) {
 }
 
 function PreencherDados(dados) {
-    document.getElementById('nome').innerText = dados.nome;
-    document.getElementById('cpf').innerText = formatarCpf(dados.cpf);
-    document.getElementById('telefone').innerText = formatarTelefone(dados.telefone);
-    document.getElementById('email').innerText = dados.email;
-    document.getElementById('tipoObjeto').innerText = dados.tipoobjetodescartado;
-    document.getElementById('objetoDescartado').innerText = dados.objetodescartado;
-    document.getElementById('responsavelColeta').innerText = dados.responsavelcoleta;
-    document.getElementById('motivoDescarte').innerText = dados.motivodescarte;
-    document.getElementById('dataColeta').innerText = formatarData(dados.datahora);
+    document.getElementById('nome').innerText = dados.Nome;
+    document.getElementById('enderecoColeta').innerText = dados.EnderecoColeta;
+    document.getElementById('cpf').innerText = formatarCpf(dados.Cpf);
+    document.getElementById('telefone').innerText = formatarTelefone(dados.Telefone);
+    document.getElementById('email').innerText = dados.Email;
+    document.getElementById('tipoObjeto').innerText = dados.TipoObjetoDescartado;
+    document.getElementById('objetoDescartado').innerText = dados.ObjetoDescartado;
+    document.getElementById('responsavelColeta').innerText = dados.ResponsavelColeta;
+    document.getElementById('motivoDescarte').innerText = dados.MotivoDescarte;
+    document.getElementById('dataColeta').innerText = formatarData(dados.DataHora);
+}
+
+function imprimir(){
+    $("#divBotoes").hide();
+    $("#divRodape").hide();
+
+    window.print();
+
+    $("#divBotoes").show();
+    $("#divRodape").show();
+
 }

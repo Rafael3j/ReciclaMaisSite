@@ -1,9 +1,12 @@
+//const urlBase = "http://localhost:51849";
+const urlBase = "http://reciclamaisapp.brazilsouth.cloudapp.azure.com:90";
+
 function Filtrar() {
     var filtro = "?nome=" + document.getElementById("nome").value
 
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/coletas/buscarPorNome" + filtro,
+        url: urlBase + "/api/coleta/buscarPorNome" + filtro,
         dataType: "json",
         contentType: "application/json",
         success: function (data) {
@@ -31,28 +34,28 @@ function PreencherDados(listaDados) {
         const dataHora = novaLinha.insertCell(5);
         const acoes = novaLinha.insertCell(6);
 
-        id.textContent = dado.id;
-        nome.textContent = dado.nome;
-        cpf.textContent = formatarCpf(dado.cpf);
-        telefone.textContent = formatarTelefone(dado.telefone);
-        objetosDescartados.textContent = dado.objetodescartado;
-        dataHora.textContent = formatarData(dado.datahora);
+        id.textContent = dado.Id;
+        nome.textContent = dado.Nome;
+        cpf.textContent = formatarCpf(dado.Cpf);
+        telefone.textContent = formatarTelefone(dado.Telefone);
+        objetosDescartados.textContent = dado.ObjetoDescartado;
+        dataHora.textContent = formatarData(dado.DataHora);
 
         const botaoVisualizar = document.createElement('button');
-        botaoVisualizar.id = 'btnVisualizar' + dado.id;
+        botaoVisualizar.id = 'btnVisualizar' + dado.Id;
         botaoVisualizar.innerHTML = '<i class="fa fa-eye"></i>';
         botaoVisualizar.className = 'btn btn-icon btn-round btn-info';
         botaoVisualizar.style.marginRight = '10px';
         botaoVisualizar.onclick = function () {
-            window.location.href = 'DetalhesColeta/index.html?id=' + dado.id;
+            window.location.href = 'DetalhesColeta/index.html?id=' + dado.Id;
         }
 
         const botaoExcluir = document.createElement('button');
-        botaoExcluir.id = 'btnExcluir' + dado.id;
+        botaoExcluir.id = 'btnExcluir' + dado.Id;
         botaoExcluir.innerHTML = '<i class="fa fa-trash"></i>';
         botaoExcluir.className = 'btn btn-icon btn-round btn-danger';
         botaoExcluir.onclick = function () {
-            ConfirmarExclusao(dado.id);
+            ConfirmarExclusao(dado.Id);
         }
 
         acoes.appendChild(botaoVisualizar);
@@ -69,7 +72,7 @@ function ConfirmarExclusao(id) {
 function Excluir(id) {
     $.ajax({
         method: "DELETE",
-        url: "http://localhost:8080/coletas/" + id,
+        url: urlBase + "/api/coleta/remover/" + id,
         success: function () {
             Filtrar();
             alert('Registro excluido com sucesso.')

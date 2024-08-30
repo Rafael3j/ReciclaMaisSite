@@ -60,6 +60,10 @@
                             <div class="card-header">
                                 <div class="card-head-row">
                                     <div class="card-title">Detalhes da Coletas</div>
+                                    <div class="ms-md-auto py-2 py-md-0" id="divBotoes">
+                                        <a href="" onclick="imprimir()" class="btn btn-primary btn-round">Imprimir</a>
+                                        <a href="../" class="btn btn-primary btn-round">Voltar</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -68,6 +72,10 @@
                                     <tr>
                                         <td style="width: 230px">Nome: </td>
                                         <td><h5 id="nome"></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 230px">Endereço da coleta: </td>
+                                        <td><h5 id="enderecoColeta"></h5></td>
                                     </tr>
                                     <tr>
                                         <td>CPF: </td>
@@ -104,16 +112,13 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="card-footer" style="text-align: right">
-                                <a href="../" class="btn btn-primary btn-round">Voltar</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="footer">
+        <footer class="footer" id="divRodape">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="copyright">
                     2024, Recicla Mais - Projeto de Extersão Estácio
